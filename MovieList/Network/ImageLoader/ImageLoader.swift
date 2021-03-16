@@ -29,13 +29,24 @@ class ImageLoader {
         }
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             if let data = data, let image = UIImage(data: data) {
-                self?.cache.setObject(image, forKey: NSString(string: urlString))
-                completion(image)
+                if let scaledImage = self?.getScaledImage(from: image) {
+                    self?.cache.setObject(scaledImage, forKey: NSString(string: urlString))
+                    completion(scaledImage)
+                }
                 return
             }
         }
         
         task.resume()
+    }
+    
+    private func getScaledImage(from image: UIImage) -> UIImage? {
+        let width = UIScreen.main.bounds.width - 40
+        let height = width * 0.6
+        let imageRect = CGRect(x: 0, y: 0, width: width, height: height)
+        UIGraphicsBeginImageContextWithOptions(imageRect.size, false, UIScreen.main.scale)
+        image.draw(in: imageRect)
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
     
 }

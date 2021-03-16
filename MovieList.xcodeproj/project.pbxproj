@@ -26,7 +26,7 @@
 		391F4EBB25FF981900754B5B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391F4EBA25FF981900754B5B /* Movie.swift */; };
 		39634B3725FFF5020001498C /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39634B3625FFF5020001498C /* MovieListCell.swift */; };
 		39634B40260008830001498C /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39634B3F260008830001498C /* ImageLoader.swift */; };
-		39634B48260026B50001498C /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39634B47260026B50001498C /* UIImage+Ext.swift */; };
+		39634B48260026B50001498C /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39634B47260026B50001498C /* UIImageView+Ext.swift */; };
 		39C996B42600D120008C1A9F /* PosterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C996B32600D120008C1A9F /* PosterVC.swift */; };
 		39C996B92600D8EE008C1A9F /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C996B82600D8EE008C1A9F /* UILabel+Ext.swift */; };
 /* End PBXBuildFile section */
@@ -74,7 +74,7 @@
 		391F4EBA25FF981900754B5B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		39634B3625FFF5020001498C /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
 		39634B3F260008830001498C /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		39634B47260026B50001498C /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		39634B47260026B50001498C /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		39C996B32600D120008C1A9F /* PosterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterVC.swift; sourceTree = "<group>"; };
 		39C996B82600D8EE008C1A9F /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				391F4E9C25FF90F900754B5B /* URLSession+Ext.swift */,
-				39634B47260026B50001498C /* UIImage+Ext.swift */,
+				39634B47260026B50001498C /* UIImageView+Ext.swift */,
 				39C996B82600D8EE008C1A9F /* UILabel+Ext.swift */,
 			);
 			path = Extensions;
@@ -390,7 +390,7 @@
 				39634B3725FFF5020001498C /* MovieListCell.swift in Sources */,
 				391F4EA525FF918D00754B5B /* Networking.swift in Sources */,
 				39C996B92600D8EE008C1A9F /* UILabel+Ext.swift in Sources */,
-				39634B48260026B50001498C /* UIImage+Ext.swift in Sources */,
+				39634B48260026B50001498C /* UIImageView+Ext.swift in Sources */,
 				391F4E8F25FF8F4F00754B5B /* AppConstants.swift in Sources */,
 				391F4E8625FF8EA500754B5B /* MovieRouter.swift in Sources */,
 				391F4E4825FF8D1A00754B5B /* AppDelegate.swift in Sources */,
