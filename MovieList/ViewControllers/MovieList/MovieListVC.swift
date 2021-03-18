@@ -19,6 +19,7 @@ class MovieListVC: UIViewController {
     
     private let requestManager = MovieListRequestsManager()
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         getMovies()
@@ -29,6 +30,7 @@ class MovieListVC: UIViewController {
         ImageLoader.shared.clearCache()
     }
     
+    //MARK: - Upadating Data
     private func getMovies() {
         requestManager.refreshMovies { (movies, errorString) in
             self.movies = movies?.results

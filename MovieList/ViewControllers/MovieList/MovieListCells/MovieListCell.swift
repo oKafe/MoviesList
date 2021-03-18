@@ -15,6 +15,7 @@ class MovieListCell: UITableViewCell {
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
     
+    //MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -27,7 +28,8 @@ class MovieListCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
+    //MARK: - Setting UI
     func configure(with movie: Movie) {
         let movieRating = movie.voteAverage ?? 0.0
         movieRateLabel.text = "\(movieRating)"
