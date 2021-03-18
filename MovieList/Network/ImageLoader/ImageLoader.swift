@@ -18,7 +18,7 @@ class ImageLoader {
         cache.removeAllObjects()
     }
     
-    func load(_ urlString: String, _ completion: @escaping (UIImage?) -> Void) {
+    func load(_ urlString: String, size: CGSize, _ completion: @escaping (UIImage?) -> Void) {
         if let image = cache.object(forKey: NSString(string: urlString)) {
             completion(image)
             return
@@ -29,7 +29,7 @@ class ImageLoader {
         }
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             if let data = data, let image = UIImage(data: data) {
-                if let scaledImage = self?.getScaledImage(from: image) {
+                if let scaledImage = self?.getScaledImage(from: image, size: size) {
                     self?.cache.setObject(scaledImage, forKey: NSString(string: urlString))
                     completion(scaledImage)
                 }
@@ -40,10 +40,8 @@ class ImageLoader {
         task.resume()
     }
     
-    private func getScaledImage(from image: UIImage) -> UIImage? {
-        let width = UIScreen.main.bounds.width - 40
-        let height = width * 0.6
-        let imageRect = CGRect(x: 0, y: 0, width: width, height: height)
+    private func getScaledImage(from image: UIImage, size: CGSize) -> UIImage? {
+        let imageRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContextWithOptions(imageRect.size, false, UIScreen.main.scale)
         image.draw(in: imageRect)
         return UIGraphicsGetImageFromCurrentImageContext()
